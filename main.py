@@ -1,4 +1,5 @@
 import os
+import sys
 
 from utils.reader import Reader
 import json
@@ -50,8 +51,14 @@ class SCEDecode(Reader):
 if __name__ == '__main__':
     if not os.path.exists('decrypted'):
         os.mkdir('decrypted')
-    if not os.path.exists('encrypted'):
-        os.mkdir('encrypted')
     if not os.path.exists('parsed'):
         os.mkdir('parsed')
+    if not os.path.exists('encrypted'):
+        os.mkdir('encrypted')
+        print('Put files into folder')
+        sys.exit()
+    # file_name = input('Type file name please: ')
+    # sce = SCEDecode(file_name)
+    
     sce = SCEDecode('log_current.sce')
+    input('Type Enter to exit: ')
